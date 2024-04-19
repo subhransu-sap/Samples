@@ -32,4 +32,5 @@ build/
 bin
 notesDB.mv.db
 notesDB.mv.db
+notesDB.trace.db
 notes on testing
