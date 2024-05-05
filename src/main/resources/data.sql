@@ -23,6 +23,7 @@ INSERT INTO author
 VALUES
     ('Author of 2');
 
+
 INSERT INTO author
     (name)
 VALUES
