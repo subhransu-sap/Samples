@@ -14,36 +14,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
 
-@Service
+
 public class CricketService {
 
-    @Autowired
-    private PlayerRepository playerRepository;
-
-    @Autowired
-    private MatchRepository matchRepository;
-
-    @Autowired
-    private RecordRepository recordRepository;
-
     public CompletableFuture<PlayerDTO> getPlayerById(int id) {
-        return CompletableFuture.supplyAsync(() -> {
-            PlayerEntity entity = playerRepository.findById(id).orElse(null);
-            return entity != null ? new PlayerDTO(entity.getId(), entity.getName(), entity.getRole()) : null;
-        });
+        return null;
     }
 
     public CompletableFuture<MatchDTO> getMatchById(int id) {
-        return CompletableFuture.supplyAsync(() -> {
-            MatchEntity entity = matchRepository.findById(id).orElse(null);
-            return entity != null ? new MatchDTO(entity.getId(), entity.getScore(), entity.getStatus()) : null;
-        });
+        return null;
     }
 
     public CompletableFuture<RecordDTO> getRecordById(int id) {
-        return CompletableFuture.supplyAsync(() -> {
-            RecordEntity entity = recordRepository.findById(id).orElse(null);
-            return entity != null ? new RecordDTO(entity.getId(), entity.getRecordDate(), entity.getLastUpdated()) : null;
-        });
+        return null;
     }
 }

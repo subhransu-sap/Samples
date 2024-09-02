@@ -23,21 +23,7 @@ public class CricketController {
 
     @GetMapping("/fetch")
     public ResponseEntity<String> fetchCricketData(@RequestParam int playerId, @RequestParam int matchId, @RequestParam int recordId) {
-        CompletableFuture<PlayerDTO> player = cricketService.getPlayerById(playerId);
-        CompletableFuture<MatchDTO> match = cricketService.getMatchById(matchId);
-        CompletableFuture<RecordDTO> record = cricketService.getRecordById(recordId);
 
-        CompletableFuture<Void> allOf = CompletableFuture.allOf(player, match, record);
-
-        return allOf.thenApply(v -> {
-            try {
-                String result = "Player: " + player.get().getName() + " - " + player.get().getRole() + "\n" +
-                        "Match: " + match.get().getScore() + " - " + match.get().getStatus() + "\n" +
-                        "Record Date: " + record.get().getRecordDate() + " - Last Updated: " + record.get().getLastUpdated();
-                return ResponseEntity.ok(result);
-            } catch (Exception e) {
-                return ResponseEntity.status(500).body("Error occurred: " + e.getMessage());
-            }
-        }).join();
+        return null;
     }
 }
