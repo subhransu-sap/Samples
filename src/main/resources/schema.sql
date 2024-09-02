@@ -1,20 +1,23 @@
-DROP TABLE IF EXISTS NOTES;
+DROP TABLE IF EXISTS players;
+DROP TABLE IF EXISTS matches;
+DROP TABLE IF EXISTS records;
 
-CREATE TABLE NOTES
-(
-  id VARCHAR
-  AUTO_INCREMENT PRIMARY KEY,
-  body VARCHAR
-  (250) NOT NULL,
 
+
+CREATE TABLE players (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    role VARCHAR(255)
 );
 
+CREATE TABLE matches (
+    id INT PRIMARY KEY,
+    score INT,
+    status VARCHAR(255)
+);
 
-CREATE TABLE AUTHOR
-(
-  id VARCHAR
-  AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR
-  (250) NOT NULL,
-
+CREATE TABLE records (
+    id INT PRIMARY KEY,
+    record_date TIMESTAMP,
+    last_updated TIMESTAMP
 );
